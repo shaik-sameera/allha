@@ -1,0 +1,133 @@
+<div class="container">
+<form>
+        
+            <div class="row">
+                <div class="col text-center p-2 mb-3 bg-light">
+                    <h3>Employee Details</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3 text" id="h1">
+                    <label for="Name" class="form-label" class="hlo">EMPLOYEE CODE</label>
+                    <input type="text" name="Name" id="Name" class="form-control" [(ngModel)]="User.emp_code">
+                </div>
+            </div>
+            <input type="button" class="btn btn-success" value="Submit" (click)="Read()">
+            <!-- <input type="reset" class="btn btn-danger" value="Reset"> -->
+
+    <div *ngIf="canshowData">  
+            <table>
+                <tr>
+                    <th colspan="10" style="text-align: center;">
+                        <h4>Employee Details</h4>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Code</td>
+                    <td colspan="6">{{User.emp_code}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Name</td>
+                    <td colspan="6">{{User.emp_name}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Qualification</td>
+                    <td colspan="6">{{User.emp_qual}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Join Date</td>
+                    <td colspan="6">{{User.emp_join_date}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Resignation Date</td>
+                    <td colspan="6">{{User .emp_resignation_date}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee pan Number</td>
+                    <td colspan="6">{{User.emp_pan_no}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Adhar Number</td>
+                    <td colspan="6">{{User.emp_adhar_no}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Pf Flag</td>
+                    <td colspan="6">{{User.emp_pf_flag}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Pf Number</td>
+                    <td colspan="6">{{User.emp_pf_no}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Esi Number</td>
+                    <td colspan="6">{{User.emp_esi_no}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Esi Flag</td>
+                    <td colspan="6">{{User.emp_esi_flag}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4"> Employee Catgory</td>
+                    <td colspan="6">{{User.emp_catg}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Basic</td>
+                    <td colspan="6">{{User.emp_basic}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4"> Employee Department</td>
+                    <td colspan="6">{{User.emp_dept}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Home Number</td>
+                    <td colspan="6">{{User.emp_hno}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Street</td>
+                    <td colspan="6">{{User.emp_street}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee city</td>
+                    <td colspan="6">{{User.emp_city}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Pincode</td>
+                    <td colspan="6">{{User.emp_pincode}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee State</td>
+                    <td colspan="6">{{User.emp_state}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Mobile Number</td>
+                    <td colspan="6">{{User.emp_phno}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Email Id</td>
+                    <td colspan="6">{{User.emp_email_id}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Consolidated Regular Flag</td>
+                    <td colspan="6">{{User.emp_cons_reg_flag}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Special Pay</td>
+                    <td colspan="6">{{User.emp_spl_pay}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Bnak Ifsc</td>
+                    <td colspan="6">{{User.emp_bank_ifsc}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Bank Name</td>
+                    <td colspan="6">{{User.emp_bank_name}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Employee Bank Account Number</td>
+                    <td colspan="6">{{User.emp_bank_acno}}</td>
+                </tr>
+            </table>
+    </div>
+</form>
+</div>
+<router-outlet></router-outlet>

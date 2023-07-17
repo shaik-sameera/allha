@@ -1,0 +1,33 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: bold;
+}
+.hlo
+{
+    text-align: center;
+    color: blueviolet;
+    font: size 30px;;
+}
+.helllo
+{
+    padding-top: 50px;
+    margin: auto;
+    font-size: large;
+}
+.hj
+{
+    text-align: center;
+    font-size: large;
+    color: rgb(5, 85, 52);
+}
+.red
+{
+    color: red;
+}
+.hlo{
+    color:black
+}

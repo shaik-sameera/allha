@@ -1,0 +1,272 @@
+<div class="container">
+    <form #r="ngForm" (ngSubmit)="Insert(r)">
+        <div class="row">
+            <div class="col text-center p-4 mb-3 bg-light"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <h3 class="hlo">Employee Details</h3>
+            </div>
+        
+        </div>
+          <div class="alert alert-danger" *ngIf="(ErrorMsg!='') && !(SuccessMsg!='')">{{ErrorMsg}}</div>
+                <div class="alert alert-success" *ngIf="(SuccessMsg!='')">{{SuccessMsg}}</div>
+
+        <div class="row">
+            <div class="col mb-3">
+                
+                <label for="emp_code" class="form-label" >Employee code</label>
+                <input type="text" name="emp_code" id="emp_code" class="form-control" (ngModelChange)="Read(this.r.value.emp_code)" ngModel minlength="10"
+                    maxlength="10" required>
+                <div *ngIf="r.controls['emp_code']?.['touched'] && r.controls['emp_code']?.['errors']"
+                    class="text-danger">
+                    <div *ngIf="r.controls['emp_code']?.['errors']?.['required']">
+                        **Enter your Employee Code**
+                    </div>
+                    <div *ngIf="r.controls['emp_code']?.['errors']?.['minlength']">
+                        **Enter your correct Employee Code**
+
+                    </div>
+                    <div *ngIf="r.controls['emp_code']?.['errors']?.['maxlength']">
+                        **Enter your correct Employee Code**
+
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Name</label>
+                <input type="text" name="emp_name" id="emp_name" class="form-control" ngModel required>
+                <div *ngIf="r.controls['emp_name']?.['touched'] && r.controls['emp_name']?.['errors']"
+                    class="text-danger">
+                    <div *ngIf="r.controls['emp_name']?.['errors']?.['required']">
+                        **Enter your Employee Name**
+                    </div>
+
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee Qualification</label>
+                <input type="text" name="emp_qual" id="emp_qual" class="form-control" ngModel>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Join_Date</label>
+                <input type="date" name="emp_join_date" id="emp_join_date" class="form-control" ngModel required>
+                <div *ngIf="r.controls['emp_join_date']?.['touched'] && r.controls['emp_join_date']?.['errors']"
+                    class="text-danger">
+                    <div *ngIf="r.controls['emp_join_date']?.['errors']?.['required']">
+                        **Enter your Join Date**
+                    </div>
+                </div>
+
+            </div>
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee Resignation date</label>
+                <input type="date" name="emp_resignation_date" id="emp_resignation_date" class="form-control" ngModel>
+            </div>
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Pan No</label>
+                <input type="text" name="emp_pan_no" id="emp_pan_no" class="form-control" ngModel minlength="10" maxlength="10" required>
+                <div *ngIf="r.controls['emp_pan_no']?.['touched'] && r.controls['emp_pan_no']?.['errors']"
+                class="text-danger"> 
+                <div *ngIf="r.controls['emp_pan_no']?.['errors']?.['required']">
+                    **Enter your Pan  Number**
+                </div>
+                <div *ngIf="r.controls['emp_pan_no']?.['errors']?.['minlength']" >
+                    **Enter your correct Pan Number **
+
+                </div>
+                <div *ngIf="r.controls['emp_adhar_no']?.['errors']?.['maxlength']">
+                    **Enter your Correct Pan Number**
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee Adhar No</label>
+                <input type="text" name="emp_adhar_no" id="emp_adhar_no" class="form-control" ngModel minlength="12" maxlength="12" required >
+                <div *ngIf="r.controls['emp_adhar_no']?.['touched'] && r.controls['emp_code']?.['errors']"
+                class="text-danger"> 
+                <div *ngIf="r.controls['emp_adhar_no']?.['errors']?.['required']">
+                    **Enter your Adhar**
+                </div>
+                <div *ngIf="r.controls['emp_adhar_no']?.['errors']?.['minlength']" >
+                    **Enter your correct Adhar **
+
+                </div>
+                <div *ngIf="r.controls['emp_adhar_no']?.['errors']?.['maxlength']">
+                    **Enter your Correct Adhar**
+                </div>
+            </div>
+            </div>
+            
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Pf Flag</label>
+                <input type="text" name="emp_pf_flag" id="emp_pf_flag" class="form-control" ngModel minlength="1" maxlength="1" required>
+                <div *ngIf="r.controls['emp_pf_flag']?.['touched'] && r.controls['emp_pf_flag']?.['errors']"
+                    class="text-danger">
+                    <div *ngIf="r.controls['emp_pf_flag']?.['errors']?.['required']">
+                        **Enter your Pf Flag **
+                    </div>
+                    <div *ngIf="r.controls['emp_pf_flag']?.['errors']?.['minlength']">
+                        **Enter your correct Pf Flag **
+
+                    </div>
+                    <div *ngIf="r.controls['emp_pf_flag']?.['errors']?.['maxlength']">
+                        **Enter your correct Pf Flag**
+
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee Pf No</label>
+                <input type="text" name="emp_pf_no" id="emp_pf_no" class="form-control" ngModel>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Esi No</label>
+                <input type="text" name="emp_esi_no" id="emp_esi_no" class="form-control" ngModel>
+            </div>
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee Esi flag</label>
+                <input type="text" name="emp_esi_flag" id="emp_esi_flag" class="form-control" ngModel minlength="1" maxlength="1" required>
+                <div *ngIf="r.controls['emp_esi_flag']?.['touched'] && r.controls['emp_esi_flag']?.['errors']"
+                    class="text-danger">
+                    <div *ngIf="r.controls['emp_esi_flag']?.['errors']?.['required']">
+                        **Enter your esi Flag **
+                    </div>
+                    <div *ngIf="r.controls['emp_esi_flag']?.['errors']?.['minlength']">
+                        **Enter your correct esi Flag **
+
+                    </div>
+                    <div *ngIf="r.controls['emp_esi_flag']?.['errors']?.['maxlength']">
+                        **Enter your correct esi Flag**
+
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee catgory</label>
+                <input type="text" name="emp_catg" id="emp_catg" class="form-control" ngModel required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee Basic</label>
+                <input type="text" name="emp_basic" id="emp_basic" class="form-control" ngModel required>
+            </div>
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Department</label>
+                <input type="text" name="emp_dept" id="emp_dept" class="form-control" ngModel>
+            </div>
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee House No</label>
+                <input type="text" name="emp_hno" id="emp_hno" class="form-control" ngModel>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Street</label>
+                <input type="text" name="emp_street" id="emp_street" class="form-control" ngModel>
+            </div>
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee City</label>
+                <input type="text" name="emp_city" id="emp_city" class="form-control" ngModel>
+            </div>
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Pincode</label>
+                <input type="text" name="emp_pincode" id="emp_pincode" class="form-control" ngModel minlength="6" maxlength="6" required>
+                <div *ngIf="r.controls['emp_pincode']?.['touched'] && r.controls['emp_pincode']?.['errors']"
+                    class="text-danger">
+                    <div *ngIf="r.controls['emp_pincode']?.['errors']?.['required']">
+                        **Enter your pincode **
+                    </div>
+                    <div *ngIf="r.controls['emp_pincode']?.['errors']?.['minlength']">
+                        **Enter your correct pincode **
+
+                    </div>
+                    <div *ngIf="r.controls['emp_pincode']?.['errors']?.['maxlength']">
+                        **Enter your correct pincode**
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee State</label>
+                <input type="text" name="emp_state" id="emp_state" class="form-control" ngModel>
+            </div>
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Mobile No</label>
+                <input type="text" name="emp_phno" id="emp_phno" class="form-control" ngModel minlength="10" maxlength="10" required>
+                <div *ngIf="r.controls['emp_phno']?.['touched'] && r.controls['emp_phno']?.['errors']"
+                class="text-danger"> 
+                <div *ngIf="r.controls['emp_phno']?.['errors']?.['required']">
+                    **Enter your Mobile Number**
+                </div>
+                <div *ngIf="r.controls['emp_phno']?.['errors']?.['minlength']" >
+                    **Enter your correct Mobile Number **
+
+                </div>
+                <div *ngIf="r.controls['emp_adhar_no']?.['errors']?.['maxlength']">
+                    **Enter your Correct Mobile Number**
+                </div>
+            </div>
+            </div>
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee Email Id</label>
+                <input type="email" name="emp_email_id" id="emp_email_id" class="form-control" name="email" ngModel required>
+                <div *ngIf="r.controls['emp_email_id']?.['touched'] && r.controls['emp_email_id']?.['errors']"
+                    class="text-danger">
+                    <div *ngIf="r.controls['emp_email_id']?.['errors']?.['required']">
+                        **Enter your Email Id**
+                    </div>
+                    <div *ngIf="r.controls['emp_email_id']?.['errors']?.['email']">
+                        **Enter your Email Id**
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Consolidated Regular Flag</label>
+                <input type="text" name="emp_cons_reg_flag" id="emp_cons_reg_flag" class="form-control" ngModel
+                    required>
+                <div *ngIf="r.controls['emp_cons_reg_flag']?.['touched'] && r.controls['emp_cons_reg_flag']?.['errors']"
+                    class="text-danger">
+                    <div *ngIf="r.controls['emp_cons_reg_flag']?.['errors']?.['required']">
+                        Enter your Consolidated or Regular Flag
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee Special Pay</label>
+                <input type="text" name="emp_spl_pay" id="emp_spl_pay" class="form-control" ngModel>
+            </div>
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Bank IfSc</label>
+                <input type="text" name="emp_bank_ifsc" id="emp_bank_ifsc" class="form-control" ngModel>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="Name" class="form-label">Employee Bank Name</label>
+                <input type="text" name="emp_bank_name" id="emp_bank_name" class="form-control" ngModel>
+            </div>
+            <div class="col mb-3">
+                <label for="Rollno" class="form-label">Employee Bank Account No</label>
+                <input type="text" name="emp_bank_acno" id="emp_bank_acno" class="form-control" ngModel>
+            </div>
+
+        </div>
+       <div class="col row">
+             <input type="submit" value="Insert" class="btn btn-success my-2" [disabled]="r.invalid">
+            <!-- <input type="submit" value="Delete" class="btn btn-danger my-2" (click)="Delete()">
+            <input type="submit" value="Read" class="btn btn-primary my-2" (click)="Read()">
+            <input type="submit" value="Update" class="btn btn-info my-2" (click)="Update()"> -->
+        </div>
+    </form>
+</div>

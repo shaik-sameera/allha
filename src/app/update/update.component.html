@@ -1,0 +1,214 @@
+<form>
+    <div class="container">
+
+        <div class="row">
+            <div class="col text-center p-2 mb-3 bg-light">
+                <h3>Employee Details</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3 text" id="h1">
+                <div class="alert alert-danger" *ngIf="(ErrorMsg!='')">{{ErrorMsg}}</div>
+                    <div class="alert alert-success" *ngIf="(SuccessMsg!='')">{{SuccessMsg}}</div>
+
+                <label for="Name" class="form-label" >EMPLOYEE CODE</label>
+                <input type="text" name="Name" id="Name" class="form-control" [(ngModel)]="User.emp_code">
+            </div>
+        </div>
+        <input type="button" class="btn btn-success" value="Submit" (click)="Read()">
+        <!-- <form><input type="reset" value="reset" class="btn btn-danger"></form> -->
+
+
+    </div>
+    <!-- <div class="container">
+        <h1 class="hj">Employee Details</h1>
+    <h2>emp_code:{{a[0]}}</h2>
+    <h2>emp_name:{{a[1]}}</h2>
+    <h2>emp_qual:{{a[2]}}</h2>
+    <h2>emp_join_date:{{a[3]}}</h2>
+    <h2>emp_resignation_date:{{a[4]}}</h2>
+    <h2>emp_pan_no:{{a[5]}}</h2>
+    <h2>emp_adhar_no:{{a[6]}}</h2>
+    <h2>emp_pf_flag:{{a[7]}}</h2>
+    <h2>emp_pf_no:{{a[8]}}</h2>
+    <h2>emp_esi_no:{{a[9]}}</h2>
+    <h2>emp_esi_flag:{{a[10]}}</h2>
+    <h2>emp_catg:{{a[11]}}</h2>
+    <h2>emp_basic:{{a[12]}}</h2>
+    <h2>emp_dept:{{a[13]}}</h2>
+    <h2>emp_hno:{{a[14]}}</h2>
+    <h2>emp_street:{{a[15]}}</h2>
+    <h2>emp_city:{{a[16]}}</h2>
+    <h2>emp_pincode:{{a[17]}}</h2>
+    <h2>emp_state:{{a[18]}}</h2>
+    <h2>emp_phno:{{a[19]}}</h2>
+    <h2>emp_email_id:{{a[20]}}</h2>
+    <h2>emp_cons_reg_flag:{{a[21]}}</h2>
+    <h2>emp_spl_pay:{{a[22]}}</h2>
+    <h2>emp_bank_ifsc:{{a[23]}}</h2>
+    <h2>Emp_Bank_Name{{a[24]}}</h2>
+    <h2>emp_bank_acno:{{a[25]}}</h2>
+    
+    </div> -->
+
+    <div *ngIf="canshowData">
+    <div class="container">
+
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_Code</label>
+                    <input type="text" name="ha" id="ha" class="form-control" [(ngModel)]="User.emp_code"
+                        [value]="a[0]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Name</label>
+                    <input type="text" name="Rollno1" id="Rollno1" class="form-control" [(ngModel)]="User.emp_name"
+                        [value]="a[1]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_Qual</label>
+                    <input type="text" name="Name3" id="Name3" class="form-control" [(ngModel)]="User.emp_qual"
+                        [value]="a[2]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Join_Date</label>
+                    <input type="date" name="Rollno2" id="Rollno2" class="form-control" [(ngModel)]="User.emp_join_date"
+                        [value]="a[3]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_Resignation_date</label>
+                    <input type="date" name="Name" id="Name" class="form-control"
+                        [(ngModel)]="User.emp_resignation_date" [value]="a[4]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Pan_No</label>
+                    <input type="text" name="Rollno3" id="Rollno3" class="form-control" [(ngModel)]="User.emp_pan_no"
+                        [value]="a[5]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_Adhar_No</label>
+                    <input type="text" name="Name1" id="Name1" class="form-control" [(ngModel)]="User.emp_adhar_no"
+                        [value]="a[6]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Pf_Flag</label>
+                    <input type="text" name="Rollno4" id="Rollno4" class="form-control" [(ngModel)]="User.emp_pf_flag"
+                        [value]="a[7]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_Pf_No</label>
+                    <input type="text" name="Name4" id="Name4" class="form-control" [(ngModel)]="User.emp_pf_no"
+                        [value]="a[8]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Esi_No</label>
+                    <input type="text" name="Rollno5" id="Rollno5" class="form-control" [(ngModel)]="User.emp_esi_no"
+                        [value]="a[9]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">emp_esi_flag</label>
+                    <input type="text" name="Name5" id="Name5" class="form-control" [(ngModel)]="User.emp_esi_flag"
+                        [value]="a[10]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">emp_catg</label>
+                    <input type="text" name="Rollno6" id="Rollno6" class="form-control" [(ngModel)]="User.emp_catg"
+                        [value]="a[11]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_Basic</label>
+                    <input type="text" name="Name7" id="Name7" class="form-control" [(ngModel)]="User.emp_basic"
+                        [value]="a[12]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Dept</label>
+                    <input type="text" name="Rollno8" id="Rollno8" class="form-control" [(ngModel)]="User.emp_dept"
+                        [value]="a[13]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_Hno</label>
+                    <input type="text" name="Nam" id="Nam" class="form-control" [(ngModel)]="User.emp_hno"
+                        [value]="a[14]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Street</label>
+                    <input type="text" name="Rollno9" id="Rollno9" class="form-control" [(ngModel)]="User.emp_street"
+                        [value]="a[15]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_City</label>
+                    <input type="text" name="Name2" id="Name2" class="form-control" [(ngModel)]="User.emp_city"
+                        [value]="a[16]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Pincode</label>
+                    <input type="text" name="Rolln" id="Rolln" class="form-control" [(ngModel)]="User.emp_pincode"
+                        [value]="a[17]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_State</label>
+                    <input type="text" name="Nme" id="Nme" class="form-control" [(ngModel)]="User.emp_state"
+                        [value]="a[18]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Ph_No</label>
+                    <input type="text" name="Roll" id="Roll" class="form-control" [(ngModel)]="User.emp_phno"
+                        [value]="a[19]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_Email</label>
+                    <input type="text" name="Nae" id="Nae" class="form-control" [(ngModel)]="User.emp_email_id"
+                        [value]="a[20]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Cons_Reg_Flag</label>
+                    <input type="text" name="Rolno" id="Rolno" class="form-control" [(ngModel)]="User.emp_cons_reg_flag"
+                        [value]="a[21]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_Spl_Pay</label>
+                    <input type="text" name="N" id="N" class="form-control" [(ngModel)]="User.emp_spl_pay"
+                        [value]="a[22]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Bank_If_Sc</label>
+                    <input type="text" name="Rollno" id="Rollno" class="form-control" [(ngModel)]="User.emp_bank_ifsc"
+                        [value]="a[23]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="Name" class="form-label">Emp_Bank_Name</label>
+                    <input type="text" name="Name9" id="Name9" class="form-control" [(ngModel)]="User.emp_bank_name"
+                        [value]="a[24]">
+                </div>
+                <div class="col mb-3">
+                    <label for="Rollno" class="form-label">Emp_Bank_Ac_No</label>
+                    <input type="text" name="Name10" id="Name10" class="form-control" [(ngModel)]="User.emp_bank_acno"
+                        [value]="a[25]">
+                </div>
+
+            </div>
+            <input type="button" class="btn btn-success" value="Update" (click)="Update()"> 
+            <input type="button" class="btn btn-warning" value="Cancel" (click)="Cancel()"> 
+
+
+        </div>
+         
+
+    </div>
+</form>
